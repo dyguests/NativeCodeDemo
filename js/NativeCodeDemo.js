@@ -18,7 +18,7 @@ export default class NativeCodeDemo extends Component {
             <View style={styles.container}>
                 <TouchableOpacity onPress={this.toast}>
                     <Text style={styles.welcome}>
-                        Welcome NativeCodeDemo
+                        Click here to call native module.
                     </Text>
                 </TouchableOpacity>
             </View>
