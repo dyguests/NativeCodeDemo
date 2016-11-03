@@ -13,6 +13,10 @@ import {
 } from 'react-native';
 import LinToastAndroid from './LinToastAndroid';
 
+import {NativeModules} from 'react-native';
+const CalendarManager = NativeModules.CalendarManager;
+CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+
 export default class NativeCodeDemo extends Component {
     render() {
         return (
@@ -27,7 +31,9 @@ export default class NativeCodeDemo extends Component {
     }
 
     toast = () => {
-        LinToastAndroid.show('Awesome', LinToastAndroid.SHORT);
+        if (Platform.OS === 'android') {
+            LinToastAndroid.show('Awesome', LinToastAndroid.SHORT);
+        }
     };
 }
 
