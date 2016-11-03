@@ -9,6 +9,7 @@ import {
     Text,
     View,
     TouchableOpacity,
+    Platform,
 } from 'react-native';
 import LinToastAndroid from './LinToastAndroid';
 
@@ -18,7 +19,7 @@ export default class NativeCodeDemo extends Component {
             <View style={styles.container}>
                 <TouchableOpacity onPress={this.toast}>
                     <Text style={styles.welcome}>
-                        Click here to call native module.
+                        Click here to call native module.(Android only)
                     </Text>
                 </TouchableOpacity>
             </View>
