@@ -15,7 +15,7 @@ import LinToastAndroid from './LinToastAndroid';
 
 import {NativeModules} from 'react-native';
 const CalendarManager = NativeModules.CalendarManager;
-CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+// CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
 
 export default class NativeCodeDemo extends Component {
     render() {
@@ -33,6 +33,8 @@ export default class NativeCodeDemo extends Component {
     toast = () => {
         if (Platform.OS === 'android') {
             LinToastAndroid.show('Awesome', LinToastAndroid.SHORT);
+        } else {
+            CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey', new Date().getTime()); // 把日期以unix时间戳形式传递
         }
     };
 }
